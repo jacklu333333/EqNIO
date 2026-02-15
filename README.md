@@ -95,8 +95,8 @@ Attitude filter data is not included with the release.
 2. Aria Dataset: [Download Here](https://www.projectaria.com/datasets/aea/)
 
 ### Pretrained Models
-1. TLIO + SO(2) Eq. Frame: [Download Here](https://drive.google.com/file/d/1BPgDNsJKVlBdW0rSj6En9KIERkxwbx00/view?usp=drive_link)
-2. TLIO + O(2) Eq. Frame: [Download Here](https://drive.google.com/file/d/1_3-KD2D1tgIkfkN3dXYoN_4Bt7e76aZl/view?usp=drive_link)
+1. TLIO + SO(2) Eq. Frame: [Download Here](https://drive.google.com/file/d/1kae7J8VEj2DxmSa--1COpwPzcXhsp5zk/view?usp=drive_link)
+2. TLIO + O(2) Eq. Frame: [Download Here](https://drive.google.com/file/d/1N2kmaHSeNX0UXca8V1Iu5oRQsCvg6oOt/view?usp=drive_link)
 
 ### Training and Testing 
 
