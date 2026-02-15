@@ -159,8 +159,8 @@ We show the benefits of our framework applied to this end-to-end Neural Network 
 3. OXOID Dataset: [Download Here](http://deepio.cs.ox.ac.uk/)
 
 ### Pretrained Models
-1. RONIN + 50\% data + SO(2) Eq. Frame: [Download Here](https://drive.google.com/file/d/1xG6Q1CQYIXiQAzpmEUMDfWAqurFbKdlP/view?usp=drive_link)
-2. RONIN + 50\% data + O(2) Eq. Frame: [Download Here](https://drive.google.com/file/d/1VuSFXbBRYVRUpMmuHm_2wjskuaZGCTiw/view?usp=drive_link)
+1. RONIN + 50\% data + SO(2) Eq. Frame: [Download Here](https://drive.google.com/file/d/1A2k2Bv-zRgWIt25xsF5HHtuR3OGfxXyr/view?usp=drive_link)
+2. RONIN + 50\% data + O(2) Eq. Frame: [Download Here](https://drive.google.com/file/d/1tM92YZCj_j8jcDSjnwsII0ckivUNVhp4/view?usp=drive_link)
 
 ### Training and Testing
 
