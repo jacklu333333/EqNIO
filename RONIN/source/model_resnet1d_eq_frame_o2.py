@@ -110,9 +110,14 @@ class Eq_Motion_Model_o2(nn.Module): ## input vector and scalar separately
         depth,
         ronin_in_dim,
         ronin_out_dim,
-        ronin_depths = [2,2,2,2], 
+        ronin_depths = [2,2,2,2],
         ronin_base_plane=64,
         ronin_kernel=3,
+        # Number of temporal frames reaching the RoNIN FC head after the 1D
+        # conv/downsample stack. Defaults to 7 (the paper's ~200-sample window).
+        # Pass window_size // 32 + 1 (e.g. 4 for a 100-sample window) to adapt
+        # to a different input length; see utils_eqnio.get_eqnio_ronin_model.
+        fc_in_dim = 7,
         stride = 1,
         padding='same',
         kernel=(16,1),
@@ -149,7 +154,7 @@ class Eq_Motion_Model_o2(nn.Module): ## input vector and scalar separately
         self.vnoutput_layer = VNLinear(dim_in=hidden_dim, dim_out= dim_out)
 
         ## Ronin
-        _fc_config = {'fc_dim': 512, 'in_dim': 7, 'dropout': 0.5, 'trans_planes': 128}
+        _fc_config = {'fc_dim': 512, 'in_dim': fc_in_dim, 'dropout': 0.5, 'trans_planes': 128}
         self.ronin = ResNet1D(ronin_in_dim, ronin_out_dim, BasicBlock1D, ronin_depths, ronin_base_plane, output_block=FCOutputModule, kernel_size=ronin_kernel, **_fc_config)
 
     def get_num_params(self):

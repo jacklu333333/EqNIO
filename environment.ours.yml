@@ -1,0 +1,34 @@
+# =============================================================================
+# Aligned to diffusion_denoise env (diffusion_202605post1) — original EqNIO env
+# was torch 2.2.2 / cuda 11.8 (see environment.yml, kept untouched for provenance).
+#
+# Environment spec for using EqNIO inside THIS repo (torch 2.11 / cuda 13.2, py3.12).
+#
+# Dependency notes:
+#   - RoNIN O2 path (configs/EqNIO_RoNIN*.yaml, src/mmodules EqNIO modules)
+#     needs ONLY `einops` on top of the base diffusion env — einops is already
+#     pinned in requirement.txt (einops==0.8.0), so the RoNIN O2 path adds no
+#     new heavy dependencies.
+#   - `fvcore` is NOT required by the RoNIN path; it is only needed for the
+#     TLIO O2 path (future) via the LieVNet/TLIO-master code in this submodule.
+#   - `quaternion` is required by EqNIO's SO(2)/O(2) frame code.
+#   - `liegroups` is required by TLIO-master (TLIO O2 path only, but cheap).
+#   - `lietorch` is optional — only needed when running the EKF filter
+#     (TLIO-master/src/main_filter.py).
+#   - `numba` matches the range already used by the repo (numba==0.60.0 in
+#     requirement.txt; 0.59.* floor keeps EqNIO code paths compatible).
+# =============================================================================
+name: diffusion_eqnio
+channels: [conda-forge, pytorch, nvidia]
+dependencies:
+  - python=3.12
+  - pytorch::pytorch=2.11.*
+  - pytorch::pytorch-cuda=13.2
+  - einops=0.8.0
+  - numba=0.59.*
+  - fvcore>=0.1.5  # for TLIO O2 path
+  - quaternion
+  - pip:
+    - liegroups==0.11
+    - lietorch==0.2  # optional for EKF
+    - gdown
